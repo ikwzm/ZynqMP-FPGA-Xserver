@@ -47,12 +47,12 @@ shell$ git lfs pull
 
 ### Install X Window System
 
-  * 1. Install Kernel Module for ZynqMP
-  * 2. Install User space libraries for ZynqMP
-  * 3. Install X Window System Core
-  * 4. Install Generic Buffer Management for ZynqMP
-  * 5. Install X.org graphics driver for ZynqMP
-  * 6. Configure /etc/X11/xorg.conf
+  1. Install Kernel Module for ZynqMP
+  2. Install User space libraries for ZynqMP
+  3. Install X Window System Core
+  4. Install Generic Buffer Management for ZynqMP
+  5. Install X.org graphics driver for ZynqMP
+  6. Configure /etc/X11/xorg.conf
 
 #### 1. Install Kernel Module for ZynqMP
 
@@ -354,7 +354,8 @@ Build
 ### Prepare
 
 ```console
-shell# apt install libdrm-dev libudev-dev libxext-dev pkg-config x11proto-core-dev x11proto-fonts-dev x11proto-gl-dev x11proto-xf86dri-dev xutils-dev xserver-xorg-dev quilt dh-autoreconf debhelper
+shell# apt install quilt dh-autoreconf dh-exec debhelper cmake cross-config
+shell# apt install libdrm-dev libudev-dev libxext-dev pkg-config x11proto-core-dev x11proto-fonts-dev x11proto-gl-dev x11proto-xf86dri-dev xutils-dev xserver-xorg-dev
 ```
 
 ### xserver-xorg-video-armsoc-xilinx
