@@ -31,7 +31,7 @@ Install
 ### Download from github
 
 ```console
-shell$ git clone -b v2019.1.0 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
+shell$ git clone -b v2019.1.1 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
 shell$ cd ZynqMP-FPGA-Xserver
 shell$ git lfs pull
 ```
@@ -43,7 +43,7 @@ shell$ git lfs pull
   * libmali-zynqmp-dev_1.6-2_arm64.deb
   * libgbm1-zynqmp_1.6-2_arm64.deb
   * libgbm-zynqmp-dev_1.6-2_arm64.deb
-  * zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb
+  * zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.2-0_arm64.deb
 
 ### Install X Window System
 
@@ -380,7 +380,7 @@ shell# debian/rules binary
 ### zynqmp-gpu kernel module
 
 ```console
-shell# git clone --recursive --depth=1 -b v0.1.1 git://github.com/ikwzm/zynqmp-gpu-kmod-dpkg
+shell# git clone --recursive --depth=1 -b v0.1.2 git://github.com/ikwzm/zynqmp-gpu-kmod-dpkg
 shell# cd zynqmp-gpu-kmod-dpkg
 shell# wget https://developer.arm.com/-/media/Files/downloads/mali-drivers/kernel/mali-utgard-gpu/DX910-SW-99002-r8p0-01rel0.tgz
 shell# tar xfz DX910-SW-99002-r8p0-01rel0.tgz
