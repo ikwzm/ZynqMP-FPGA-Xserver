@@ -31,7 +31,7 @@ Install
 ### Download from github
 
 ```console
-shell$ git clone -b v2019.1.1 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
+shell$ git clone -b v2019.1.2 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
 shell$ cd ZynqMP-FPGA-Xserver
 shell$ git lfs pull
 ```
@@ -39,10 +39,10 @@ shell$ git lfs pull
 ### File Description
 
   * xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb
-  * libmali-zynqmp_1.6-2_arm64.deb
-  * libmali-zynqmp-dev_1.6-2_arm64.deb
-  * libgbm1-zynqmp_1.6-2_arm64.deb
-  * libgbm-zynqmp-dev_1.6-2_arm64.deb
+  * libmali-zynqmp_1.6-3_arm64.deb
+  * libmali-zynqmp-dev_1.6-3_arm64.deb
+  * libgbm1-zynqmp_1.6-3_arm64.deb
+  * libgbm-zynqmp-dev_1.6-3_arm64.deb
   * zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.2-0_arm64.deb
 
 ### Install X Window System
@@ -68,12 +68,12 @@ Setting up zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga (0.1.1-0) ...
 #### 2. Install User space libraries for ZynqMP
 
 ```console
-shell# dpkg -i libmali-zynqmp_1.6-2_arm64.deb
+shell# dpkg -i libmali-zynqmp_1.6-3_arm64.deb
 Selecting previously unselected package libmali-zynqmp:arm64.
-(Reading database ... 64747 files and directories currently installed.)
-Preparing to unpack libmali-zynqmp_1.6-2_arm64.deb ...
-Unpacking libmali-zynqmp:arm64 (1.6-2) ...
-Setting up libmali-zynqmp:arm64 (1.6-2) ...
+(Reading database ... 66644 files and directories currently installed.)
+Preparing to unpack libmali-zynqmp_1.6-3_arm64.deb ...
+Unpacking libmali-zynqmp:arm64 (1.6-3) ...
+Setting up libmali-zynqmp:arm64 (1.6-3) ...
 Processing triggers for libc-bin (2.28-10) ...
 ```
 
@@ -190,7 +190,7 @@ Unpacking libwayland-server0:arm64 (1.16.0-1) ...
 Selecting previously unselected package libgbm1:arm64.
 Preparing to unpack .../03-libgbm1_18.3.6-2_arm64.deb ...
 Unpacking libgbm1:arm64 (18.3.6-2) ...
-Replaced by files in installed package libgbm1-zynqmp:arm64 (1.6-2) ...
+Replaced by files in installed package libgbm1-zynqmp:arm64 (1.6-3) ...
 Selecting previously unselected package libwacom-common.
 Preparing to unpack .../04-libwacom-common_0.32-1_all.deb ...
 Unpacking libwacom-common (0.32-1) ...
@@ -308,12 +308,12 @@ Processing triggers for fontconfig (2.13.1-2) ...
 
 
 ```console
-shell# dpkg -i libgbm1-zynqmp_1.6-2_arm64.deb 
+shell# dpkg -i libgbm1-zynqmp_1.6-3_arm64.deb 
 [sudo] password for fpga: 
-(Reading database ... 66585 files and directories currently installed.)
-Preparing to unpack libgbm1-zynqmp_1.6-2_arm64.deb ...
-Unpacking libgbm1-zynqmp:arm64 (1.6-2) over (1.6-2) ...
-Setting up libgbm1-zynqmp:arm64 (1.6-2) ...
+(Reading database ... 66644 files and directories currently installed.)
+Preparing to unpack libgbm1-zynqmp_1.6-3_arm64.deb ...
+Unpacking libgbm1-zynqmp:arm64 (1.6-3) over (1.6-3) ...
+Setting up libgbm1-zynqmp:arm64 (1.6-3) ...
 ```
 
 #### 5. Install X.org graphics driver for ZynqMP
@@ -369,7 +369,7 @@ shell# debian/rules binary
 ### libmali-zynqmp
 
 ```
-shell# git clone --recursive --depth=1 -b v1.6-1 git://github.com/ikwzm/libmali-zynqmp.git
+shell# git clone --recursive --depth=1 -b v1.6-3 git://github.com/ikwzm/libmali-zynqmp.git
 shell# cd libmali-zynqmp
 shell# wget https://www.xilinx.com/publications/products/tools/mali-400-userspace.tar
 shell# tar xf mali-400-userspace.tar mali/rel-v2019.1/r8p0-01rel0.tar
