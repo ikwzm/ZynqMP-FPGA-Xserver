@@ -369,7 +369,7 @@ shell# debian/rules binary
 ### libmali-zynqmp
 
 ```
-shell# git clone --recursive --depth=1 -b v1.6-1 git://github.com/ikwzm/libmali-zynqmp.git
+shell# git clone --recursive --depth=1 -b v1.6-2 git://github.com/ikwzm/libmali-zynqmp.git
 shell# cd libmali-zynqmp
 shell# wget https://www.xilinx.com/publications/products/tools/mali-400-userspace.tar
 shell# tar xf mali-400-userspace.tar mali/rel-v2019.1/r8p0-01rel0.tar
