@@ -31,7 +31,7 @@ Install
 ### Download from github
 
 ```console
-shell$ git clone -b v2019.1.1 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
+shell$ git clone -b v2019.1.3 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
 shell$ cd ZynqMP-FPGA-Xserver
 shell$ git lfs pull
 ```
@@ -39,22 +39,31 @@ shell$ git lfs pull
 ### File Description
 
   * xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb
-  * libmali-zynqmp_1.6-2_arm64.deb
-  * libmali-zynqmp-dev_1.6-2_arm64.deb
-  * libgbm1-zynqmp_1.6-2_arm64.deb
-  * libgbm-zynqmp-dev_1.6-2_arm64.deb
+  * libegl1-zynqmp-dev_1.7-0_arm64.deb
+  * libegl1-zynqmp_1.7-0_arm64.deb
+  * libgbm-zynqmp-dev_1.7-0_arm64.deb
+  * libgbm1-zynqmp_1.7-0_arm64.deb
+  * libgles1-zynqmp-dev_1.7-0_arm64.deb
+  * libgles1-zynqmp_1.7-0_arm64.deb
+  * libgles2-zynqmp-dev_1.7-0_arm64.deb
+  * libgles2-zynqmp_1.7-0_arm64.deb
+  * libmali-zynqmp-dev_1.7-0_arm64.deb
+  * libmali-zynqmp_1.7-0_arm64.deb
   * zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.2-0_arm64.deb
 
 ### Install X Window System
 
   1. Install Kernel Module for ZynqMP
-  2. Install User space libraries for ZynqMP
-  3. Install X Window System Core
-  4. Install Generic Buffer Management for ZynqMP
-  5. Install X.org graphics driver for ZynqMP
-  6. Configure /etc/X11/xorg.conf
+  2. Install X Window System Core
+  3. Install User space libraries for ZynqMP
+  4. Install X.org graphics driver for ZynqMP
+  5. Configure /etc/X11/xorg.conf
+  6. Install Development Files (if necessary)
 
 #### 1. Install Kernel Module for ZynqMP
+
+<details>
+<summary>dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb</summary>
 
 ```console
 shell# dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb 
@@ -64,20 +73,12 @@ Preparing to unpack zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb
 Unpacking zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga (0.1.1-0) ...
 Setting up zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga (0.1.1-0) ...
 ```
+</details>
 
-#### 2. Install User space libraries for ZynqMP
+#### 2. Install X Window System Core
 
-```console
-shell# dpkg -i libmali-zynqmp_1.6-2_arm64.deb
-Selecting previously unselected package libmali-zynqmp:arm64.
-(Reading database ... 64747 files and directories currently installed.)
-Preparing to unpack libmali-zynqmp_1.6-2_arm64.deb ...
-Unpacking libmali-zynqmp:arm64 (1.6-2) ...
-Setting up libmali-zynqmp:arm64 (1.6-2) ...
-Processing triggers for libc-bin (2.28-10) ...
-```
-
-#### 3. Install X Window System Core
+<details>
+<summary>apt install x-window-system-core</summary>
 
 ```console
 shell# apt install x-window-system-core
@@ -301,34 +302,107 @@ Setting up xorg (1:7.7+19) ...
 Processing triggers for libc-bin (2.28-10) ...
 Processing triggers for man-db (2.8.5-2) ...
 Processing triggers for fontconfig (2.13.1-2) ...
-
 ```
+</details>
 
-#### 4. Install Generic Buffer Management for ZynqMP
 
+#### 3. Install User space libraries for ZynqMP
+
+##### 3.1 Install libmali-zynqmp
+
+<details>
+<summary>dpkg -i libmali-zynqmp_1.7-0_arm64.deb</summary>
 
 ```console
-shell# dpkg -i libgbm1-zynqmp_1.6-2_arm64.deb 
-[sudo] password for fpga: 
-(Reading database ... 66585 files and directories currently installed.)
-Preparing to unpack libgbm1-zynqmp_1.6-2_arm64.deb ...
-Unpacking libgbm1-zynqmp:arm64 (1.6-2) over (1.6-2) ...
-Setting up libgbm1-zynqmp:arm64 (1.6-2) ...
+shell# dpkg -i libmali-zynqmp_1.7-0_arm64.deb 
+Selecting previously unselected package libmali-zynqmp:arm64.
+(Reading database ... 85064 files and directories currently installed.)
+Preparing to unpack libmali-zynqmp_1.7-0_arm64.deb ...
+Unpacking libmali-zynqmp:arm64 (1.7-0) ...
+Setting up libmali-zynqmp:arm64 (1.7-0) ...
+Processing triggers for libc-bin (2.28-10) ...
 ```
+</details>
 
-#### 5. Install X.org graphics driver for ZynqMP
+##### 3.2 Install libegl1-zynqmp
+
+<details>
+<summary>dpkg -i libegl1-zynqmp_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libegl1-zynqmp_1.7-0_arm64.deb 
+Selecting previously unselected package libegl1-zynqmp:arm64.
+(Reading database ... 85072 files and directories currently installed.)
+Preparing to unpack libegl1-zynqmp_1.7-0_arm64.deb ...
+Unpacking libegl1-zynqmp:arm64 (1.7-0) ...
+Replacing files in old package libegl1:arm64 (1.1.0-1) ...
+Setting up libegl1-zynqmp:arm64 (1.7-0) ...
+```
+</details>
+
+##### 3.3 Install libgles1-zynqmp
+
+<details>
+<summary>dpkg -i libgles1-zynqmp_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libgles1-zynqmp_1.7-0_arm64.deb 
+Selecting previously unselected package libgles1-zynqmp:arm64.
+(Reading database ... 85076 files and directories currently installed.)
+Preparing to unpack libgles1-zynqmp_1.7-0_arm64.deb ...
+Unpacking libgles1-zynqmp:arm64 (1.7-0) ...
+Setting up libgles1-zynqmp:arm64 (1.7-0) ...
+```
+</details>
+
+##### 3.4 Install libgles2-zynqmp
+
+<details>
+<summary>dpkg -i libgles2-zynqmp_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libgles2-zynqmp_1.7-0_arm64.deb
+Selecting previously unselected package libgles2-zynqmp:arm64.
+(Reading database ... 85081 files and directories currently installed.)
+Preparing to unpack libgles2-zynqmp_1.7-0_arm64.deb ...
+Unpacking libgles2-zynqmp:arm64 (1.7-0) ...
+Setting up libgles2-zynqmp:arm64 (1.7-0) ...
+```
+</details>
+
+##### 3.5 Install libgbm1-zynqmp
+
+<details>
+<summary>dpkg -i libgbm1-zynqmp_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libgbm1-zynqmp_1.7-0_arm64.deb
+Selecting previously unselected package libgbm1-zynqmp:arm64.
+(Reading database ... 85086 files and directories currently installed.)
+Preparing to unpack libgbm1-zynqmp_1.7-0_arm64.deb ...
+Unpacking libgbm1-zynqmp:arm64 (1.7-0) ...
+Replacing files in old package libgbm1:arm64 (18.3.6-2) ...
+Setting up libgbm1-zynqmp:arm64 (1.7-0) ...
+```
+</details>
+
+#### 4. Install X.org graphics driver for ZynqMP
+
+<details>
+<summary>dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb</summary>
 
 ```console
 shell# dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb 
 Selecting previously unselected package xserver-xorg-video-armsoc-xilinx.
-(Reading database ... 66577 files and directories currently installed.)
+(Reading database ... 85089 files and directories currently installed.)
 Preparing to unpack xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb ...
 Unpacking xserver-xorg-video-armsoc-xilinx (1.4-1) ...
 Setting up xserver-xorg-video-armsoc-xilinx (1.4-1) ...
 Processing triggers for man-db (2.8.5-2) ...
 ```
+</details>
 
-#### 6. Configure /etc/X11/xorg.conf
+#### 5. Configure /etc/X11/xorg.conf
 
 Add ZynqMP Device Section to /etc/X11/xorg.conf
 
@@ -347,6 +421,82 @@ Section "Screen"
 	Device		"ZynqMP"
 EndSection
 ```
+
+#### 6. Install Development Files (if necessary)
+
+##### 6.1 Install libmali-zynqmp-dev
+
+<details>
+<summary>dpkg -i libmali-zynqmp-dev_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libmali-zynqmp-dev_1.7-0_arm64.deb 
+Selecting previously unselected package libmali-zynqmp-dev:arm64.
+(Reading database ... 85097 files and directories currently installed.)
+Preparing to unpack libmali-zynqmp-dev_1.7-0_arm64.deb ...
+Unpacking libmali-zynqmp-dev:arm64 (1.7-0) ...
+Setting up libmali-zynqmp-dev:arm64 (1.7-0) ...
+```
+</details>
+
+##### 6.2 Install libegl1-zynqmp-dev
+
+<details>
+<summary>dpkg -i libegl1-zynqmp-dev_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libegl1-zynqmp-dev_1.7-0_arm64.deb 
+Selecting previously unselected package libegl1-zynqmp-dev:arm64.
+(Reading database ... 85101 files and directories currently installed.)
+Preparing to unpack libegl1-zynqmp-dev_1.7-0_arm64.deb ...
+Unpacking libegl1-zynqmp-dev:arm64 (1.7-0) ...
+Setting up libegl1-zynqmp-dev:arm64 (1.7-0) ...
+```
+</details>
+
+##### 6.3 Install libgles1-zynqmp-dev
+
+<details>
+<summary>dpkg -i libegl1-zynqmp-dev_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libegl1-zynqmp-dev_1.7-0_arm64.deb 
+(Reading database ... 85110 files and directories currently installed.)
+Preparing to unpack libegl1-zynqmp-dev_1.7-0_arm64.deb ...
+Unpacking libegl1-zynqmp-dev:arm64 (1.7-0) over (1.7-0) ...
+Setting up libegl1-zynqmp-dev:arm64 (1.7-0) ...
+```
+</details>
+
+##### 6.4 Install libgles2-zynqmp-dev
+
+<details>
+<summary>dpkg -i libgles2-zynqmp-dev_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libgles2-zynqmp-dev_1.7-0_arm64.deb 
+Selecting previously unselected package libgles2-zynqmp-dev:arm64.
+(Reading database ... 85110 files and directories currently installed.)
+Preparing to unpack libgles2-zynqmp-dev_1.7-0_arm64.deb ...
+Unpacking libgles2-zynqmp-dev:arm64 (1.7-0) ...
+Setting up libgles2-zynqmp-dev:arm64 (1.7-0) ...
+```
+</details>
+
+##### 6.5 Install libgbm-zynqmp-dev
+
+<details>
+<summary>dpkg -i libgbm-zynqmp-dev_1.7-0_arm64.deb</summary>
+
+```console
+shell# dpkg -i libgbm-zynqmp-dev_1.7-0_arm64.deb 
+Selecting previously unselected package libgbm-zynqmp-dev:arm64.
+(Reading database ... 85119 files and directories currently installed.)
+Preparing to unpack libgbm-zynqmp-dev_1.7-0_arm64.deb ...
+Unpacking libgbm-zynqmp-dev:arm64 (1.7-0) ...
+Setting up libgbm-zynqmp-dev:arm64 (1.7-0) ...
+```
+</details>
 
 Build
 ---------------------------------------------------------------------
@@ -369,7 +519,7 @@ shell# debian/rules binary
 ### libmali-zynqmp
 
 ```
-shell# git clone --recursive --depth=1 -b v1.6-2 git://github.com/ikwzm/libmali-zynqmp.git
+shell# git clone --recursive --depth=1 -b v1.7-0 git://github.com/ikwzm/libmali-zynqmp.git
 shell# cd libmali-zynqmp
 shell# wget https://www.xilinx.com/publications/products/tools/mali-400-userspace.tar
 shell# tar xf mali-400-userspace.tar mali/rel-v2019.1/r8p0-01rel0.tar
