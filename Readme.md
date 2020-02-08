@@ -31,14 +31,13 @@ Install
 ### Download from github
 
 ```console
-shell$ git clone -b v2019.1.3 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
+shell$ git clone -b v2019.2.1 git://github.com/ikwzm/ZynqMP-FPGA-Xserver
 shell$ cd ZynqMP-FPGA-Xserver
-shell$ git lfs pull
 ```
 
 ### File Description
 
-  * xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb
+  * xserver-xorg-video-armsoc-xilinx_1.4-2_arm64.deb
   * libegl1-zynqmp-dev_1.7-0_arm64.deb
   * libegl1-zynqmp_1.7-0_arm64.deb
   * libgbm-zynqmp-dev_1.7-0_arm64.deb
@@ -49,7 +48,7 @@ shell$ git lfs pull
   * libgles2-zynqmp_1.7-0_arm64.deb
   * libmali-zynqmp-dev_1.7-0_arm64.deb
   * libmali-zynqmp_1.7-0_arm64.deb
-  * zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.2-0_arm64.deb
+  * zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga_0.1.2-0_arm64.deb
 
 ### Install X Window System
 
@@ -63,15 +62,14 @@ shell$ git lfs pull
 #### 1. Install Kernel Module for ZynqMP
 
 <details>
-<summary>dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb</summary>
+<summary>dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga_0.1.2-0_arm64.deb</summary>
 
 ```console
-shell# dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb 
-Selecting previously unselected package zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga.
-(Reading database ... 66608 files and directories currently installed.)
-Preparing to unpack zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga_0.1.1-0_arm64.deb ...
-Unpacking zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga (0.1.1-0) ...
-Setting up zynqmp-gpu-4.19.0-xlnx-v2019.1-zynqmp-fpga (0.1.1-0) ...
+shell# dpkg --install zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga_0.1.2-0_arm64.deb 
+(Reading database ... 104374 files and directories currently installed.)
+Preparing to unpack zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga_0.1.2-0_arm64.deb ...
+Unpacking zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga (0.1.2-0) over (0.1.2-0) ...
+Setting up zynqmp-gpu-4.19.0-xlnx-v2019.2-zynqmp-fpga (0.1.2-0) ...
 ```
 </details>
 
@@ -389,15 +387,14 @@ Setting up libgbm1-zynqmp:arm64 (1.7-0) ...
 #### 4. Install X.org graphics driver for ZynqMP
 
 <details>
-<summary>dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb</summary>
+<summary>dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-2_arm64.deb</summary>
 
 ```console
-shell# dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb 
-Selecting previously unselected package xserver-xorg-video-armsoc-xilinx.
-(Reading database ... 85089 files and directories currently installed.)
-Preparing to unpack xserver-xorg-video-armsoc-xilinx_1.4-1_arm64.deb ...
-Unpacking xserver-xorg-video-armsoc-xilinx (1.4-1) ...
-Setting up xserver-xorg-video-armsoc-xilinx (1.4-1) ...
+shell# dpkg -i xserver-xorg-video-armsoc-xilinx_1.4-2_arm64.deb 
+(Reading database ... 104374 files and directories currently installed.)
+Preparing to unpack xserver-xorg-video-armsoc-xilinx_1.4-2_arm64.deb ...
+Unpacking xserver-xorg-video-armsoc-xilinx (1.4-2) over (1.4-2) ...
+Setting up xserver-xorg-video-armsoc-xilinx (1.4-2) ...
 Processing triggers for man-db (2.8.5-2) ...
 ```
 </details>
@@ -511,7 +508,7 @@ shell# apt install libdrm-dev libudev-dev libxext-dev pkg-config x11proto-core-d
 ### xserver-xorg-video-armsoc-xilinx
 
 ```console
-shell# git clone --recursive --depth=1 -b v1.4-1 git://github.com/ikwzm/xf86-video-armsoc-xilinx.git
+shell# git clone --recursive --depth=1 -b v1.4-2 git://github.com/ikwzm/xf86-video-armsoc-xilinx.git
 shell# cd xf86-video-armsoc-xilinx
 shell# debian/rules binary
 ```
